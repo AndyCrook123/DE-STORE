@@ -11,7 +11,7 @@ import javax.mail.MessagingException;
 public class EmailUtil {
 
     public static void sendEmail(String to, String subject, String body) {
-        final String from = "andrewcrook7@gmail.com";
+        final String from = "";
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
