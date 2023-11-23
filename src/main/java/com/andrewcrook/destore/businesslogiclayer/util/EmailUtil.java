@@ -21,7 +21,7 @@ public class EmailUtil {
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("apikey", "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");
+                return new PasswordAuthentication("apikey", "");
             }
         });
 
