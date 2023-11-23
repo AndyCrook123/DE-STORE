@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.andrewcrook.destore.presentationlayer.DestoreController">
+    <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="300.0" spacing="10.0" styleClass="form-container" stylesheets="@../styles/styles.css" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="150.0">
+        <Label text="Product Name:" />
+        <TextField fx:id="productNameField" />
+        <Label text="Description:" />
+        <TextField fx:id="descriptionField" />
+        <Label text="Price:" />
+        <TextField fx:id="priceField" />
+        <Label text="Stock Level:" />
+        <TextField fx:id="stockLevelField" />
+
+        <Button onAction="#handleAddProduct" text="Add Product" />
+    </VBox>
+
+    <TextField fx:id="deleteProductIdField" prefWidth="105.0" promptText="Enter Product ID" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="500.0" />
+    <Button onAction="#handleDeleteProduct" prefWidth="105.0" text="Delete Product" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="540.0" />
+    <Button onAction="#handleEditProduct" prefWidth="105.0" text="Edit Product" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="580.0" />
+
+    <TableView fx:id="productTableView" prefHeight="250.0" prefWidth="390.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="500.0">
+      <columns>
+          <TableColumn fx:id="productIdColumn" text="Product ID" />
+          <TableColumn fx:id="productNameColumn" text="Product Name" />
+          <TableColumn fx:id="descriptionColumn" text="Description" />
+          <TableColumn fx:id="priceColumn" text="Price" />
+          <TableColumn fx:id="stockLevelColumn" text="Stock Level" />
+      </columns>
+    </TableView>
+    <TableView fx:id="inventoryLogTableView" prefHeight="250.0" prefWidth="480.0" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="150.0">
+        <columns>
+            <TableColumn fx:id="logIdColumn" text="Log ID" />
+            <TableColumn fx:id="productNameColumnLog" text="Product Name" />
+            <TableColumn fx:id="dateColumn" text="Date" />
+            <TableColumn fx:id="stockChangeColumn" prefWidth="95.0" text="Stock Change" />
+            <TableColumn fx:id="newStockLevelColumn" prefWidth="105.0" text="New Stock Level" />
+        </columns>
+    </TableView>
+    <Label alignment="CENTER" text="Current Stock Levels" textAlignment="CENTER" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="450.0">
+        <font>
+          <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <VBox fx:id="editProductForm" alignment="CENTER" managed="false" spacing="5.0" style="-fx-border-color: black;" visible="false" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="300.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+        <TextField fx:id="editNameField" promptText="Product Name" />
+        <TextField fx:id="editDescriptionField" promptText="Description" />
+        <TextField fx:id="editPriceField" promptText="Price" />
+        <TextField fx:id="editStockLevelField" promptText="Stock Level" />
+        <Button onAction="#handleSaveEdit" text="Save" />
+        <Button onAction="#handleCancelEdit" text="Cancel" />
+    </VBox>
+    <VBox fx:id="financeApprovalForm" alignment="TOP_CENTER" spacing="10" AnchorPane.leftAnchor="650.0" AnchorPane.topAnchor="500.0">
+        <TextField fx:id="customerNameField" promptText="Customer Name" />
+        <TextField fx:id="customerAgeField" promptText="Customer Age" />
+        <TextField fx:id="loanAmountField" promptText="Loan Amount" />
+        <TextField fx:id="loanDurationField" promptText="Loan Duration (Years)" />
+        <Button onAction="#handleFinanceApproval" text="Submit" />
+    </VBox>
+    <VBox fx:id="addStockForm" spacing="10" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="177.0">
+        <TextField fx:id="orderIdField" prefWidth="105.0" promptText="Enter Product ID" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="500.0" />
+        <TextField fx:id="orderQuantityField" promptText="Enter Quantity" />
+        <Button alignment="CENTER" onAction="#handleUpdateStock" text="Order Stock" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets left="38.0" />
+         </VBox.margin></Button>
+    </VBox>
+
+    <Label text="Order Stock" textAlignment="CENTER" AnchorPane.leftAnchor="509.0" AnchorPane.topAnchor="100.0">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    <Label text="Add New Product" textAlignment="CENTER" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="100.0">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="382.0" text="DE-STORE MANAGEMENT SYSTEM" textAlignment="CENTER" AnchorPane.leftAnchor="405.0" AnchorPane.topAnchor="20.0">
+      <font>
+         <Font size="24.0" />
+      </font>
+   </Label>
+   <Label text="Request Finance" textAlignment="CENTER" AnchorPane.leftAnchor="665.0" AnchorPane.topAnchor="450.0">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <LineChart fx:id="salesChart" prefHeight="250.0" prefWidth="300.0" AnchorPane.leftAnchor="860.0" AnchorPane.topAnchor="500.0">
+     <xAxis>
+       <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+     </xAxis>
+     <yAxis>
+       <NumberAxis fx:id="yAxis" side="LEFT" />
+     </yAxis>
+   </LineChart>
+   <Label text="Reports" textAlignment="CENTER" AnchorPane.leftAnchor="1000.0" AnchorPane.topAnchor="450.0">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <Label text="Inventory Logs" textAlignment="CENTER" AnchorPane.leftAnchor="900.0" AnchorPane.topAnchor="100.0">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+</AnchorPane>

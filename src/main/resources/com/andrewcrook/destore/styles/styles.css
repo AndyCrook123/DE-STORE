@@ -1,0 +1,11 @@
+/* styles.css */
+.text-field {
+    -fx-pref-width: 200px;
+}
+
+.button {
+    -fx-pref-width: 100px;
+}
+
+.form-container {
+}
