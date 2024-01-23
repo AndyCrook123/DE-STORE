@@ -11,7 +11,7 @@ import javax.mail.MessagingException;
 public class EmailUtil {
 
     public static void sendEmail(String to, String subject, String body) {
-        final String from = "andrewcrook7@gmail.com";
+        final String from = "";
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -21,7 +21,7 @@ public class EmailUtil {
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("apikey", "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");
+                return new PasswordAuthentication("apikey", "");
             }
         });
 

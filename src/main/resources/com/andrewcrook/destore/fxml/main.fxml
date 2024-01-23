@@ -21,8 +21,8 @@
     </VBox>
 
     <TextField fx:id="deleteProductIdField" prefWidth="105.0" promptText="Enter Product ID" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="500.0" />
-    <Button onAction="#handleDeleteProduct" prefWidth="105.0" text="Delete Product" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="540.0" />
-    <Button onAction="#handleEditProduct" prefWidth="105.0" text="Edit Product" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="580.0" />
+    <Button onAction="#handleDeleteProduct" prefWidth="105.0" text="Delete Product" textAlignment="CENTER" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="540.0" />
+    <Button onAction="#handleEditProduct" prefWidth="105.0" text="Edit Product" textAlignment="CENTER" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="580.0" />
 
     <TableView fx:id="productTableView" prefHeight="250.0" prefWidth="390.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="500.0">
       <columns>
