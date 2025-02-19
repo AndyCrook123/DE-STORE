@@ -84,9 +84,9 @@ public class DestoreController {
     @FXML
     private void initialize() {
 
-        String jdbcURL = "jdbc:mysql://localhost:3306/de-store";
-        String jdbcUsername = "root";
-        String jdbcPassword = "andrewcrook";
+        String jdbcURL = "";
+        String jdbcUsername = "";
+        String jdbcPassword = "";
         productService = new ProductService(jdbcURL, jdbcUsername, jdbcPassword);
         inventoryLogDAO = new InventoryLogDAO(jdbcURL, jdbcUsername, jdbcPassword);
 
